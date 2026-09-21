@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Лабораторна робота №2: адаптивна секція тарифних планів." />
+    <title>Тарифні плани | Лабораторна робота №2</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <section class="pricing-section" aria-labelledby="pricing-title">
+        <div class="pricing-container">
+          <header class="section-header">
+            <h1 id="pricing-title">Наші тарифи</h1>
+            <p class="section-description">
+              Оберіть план, який найкраще підходить для ваших завдань.
+            </p>
+          </header>
+
+          <div class="pricing-grid">
+            <article class="pricing-card">
+              <div>
+                <p class="pricing-card__label"></p>
+                <h2>Basic</h2>
+                <p class="pricing-card__price">$10 <span>/ month</span></p>
+                <ul class="pricing-card__features">
+                  <li>1 User</li>
+                  <li>5GB Storage</li>
+                  <li>Basic Support</li>
+                </ul>
+              </div>
+              <button class="btn btn--secondary" type="button">Select</button>
+            </article>
+
+            <article class="pricing-card pricing-card--featured">
+              <div class="pricing-card__content">
+                <p class="pricing-card__badge">Pro <span>• Active</span></p>
+                <p class="pricing-card__label"></p>
+                <h2>Pro</h2>
+                <p class="pricing-card__price">$29 <span>/ month</span></p>
+                <ul class="pricing-card__features">
+                  <li>5 Users</li>
+                  <li>50GB Storage</li>
+                  <li>Priority Support</li>
+                </ul>
+              </div>
+              <button class="btn btn--primary" type="button">Get Started</button>
+            </article>
+
+            <article class="pricing-card">
+              <div>
+                <p class="pricing-card__label"></p>
+                <h2>Enterprise</h2>
+                <p class="pricing-card__price">$99 <span>/ month</span></p>
+                <ul class="pricing-card__features">
+                  <li>Unlimited</li>
+                  <li>1TB Storage</li>
+                  <li>24/7 Support</li>
+                </ul>
+              </div>
+              <button class="btn btn--secondary" type="button">Contact</button>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
