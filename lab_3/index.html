@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Наші тарифи — Basic, Pro, Enterprise</title>
+    <meta
+      name="description"
+      content="Оберіть план, який найкраще підходить для ваших завдань: тарифи Basic, Pro та Enterprise."
+    />
+    <link rel="canonical" href="https://<username>.github.io/<repository>/" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__container">
+        <a href="/" class="site-logo" aria-label="Головна сторінка">CloudService</a>
+        <nav class="site-nav" aria-label="Головна навігація">
+          <ul class="site-nav__list">
+            <li><a href="#pricing" class="site-nav__link">Тарифи</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="pricing" class="pricing-section" aria-labelledby="pricing-title">
+        <div class="pricing-container">
+          <header class="section-header">
+            <h1 id="pricing-title">Наші тарифи</h1>
+            <p class="section-description">
+              Оберіть план, який найкраще підходить для ваших завдань.
+            </p>
+          </header>
+
+          <div class="pricing-grid">
+            <article class="pricing-card" aria-labelledby="plan-basic">
+              <div>
+                <p class="pricing-card__label"></p>
+                <h2 id="plan-basic" class="pricing-card__title">Basic</h2>
+                <p class="pricing-card__price">$10 <span>/ month</span></p>
+                <ul class="pricing-card__features" aria-label="Особливості тарифу Basic">
+                  <li>1 User</li>
+                  <li>5GB Storage</li>
+                  <li>Basic Support</li>
+                </ul>
+              </div>
+              <a
+                href="/checkout?plan=basic"
+                class="btn btn--secondary"
+                aria-label="Select plan Basic"
+                >Select</a
+              >
+            </article>
+
+            <article class="pricing-card pricing-card--featured" aria-labelledby="plan-pro">
+              <div class="pricing-card__content">
+                <p class="pricing-card__badge">Pro <span>• Active</span></p>
+                <p class="pricing-card__label"></p>
+                <h2 id="plan-pro" class="pricing-card__title">Pro</h2>
+                <p class="pricing-card__price">$29 <span>/ month</span></p>
+                <ul class="pricing-card__features" aria-label="Особливості тарифу Pro">
+                  <li>5 Users</li>
+                  <li>50GB Storage</li>
+                  <li>Priority Support</li>
+                </ul>
+              </div>
+              <a
+                href="/checkout?plan=pro"
+                class="btn btn--primary"
+                aria-label="Get Started with Pro"
+                >Get Started</a
+              >
+            </article>
+
+            <article class="pricing-card" aria-labelledby="plan-enterprise">
+              <div>
+                <p class="pricing-card__label"></p>
+                <h2 id="plan-enterprise" class="pricing-card__title">Enterprise</h2>
+                <p class="pricing-card__price">$99 <span>/ month</span></p>
+                <ul class="pricing-card__features" aria-label="Особливості тарифу Enterprise">
+                  <li>Unlimited</li>
+                  <li>1TB Storage</li>
+                  <li>24/7 Support</li>
+                </ul>
+              </div>
+              <button
+                class="btn btn--secondary"
+                type="button"
+                aria-haspopup="dialog"
+                aria-label="Contact sales for Enterprise"
+              >
+                Contact
+              </button>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__container">
+        <p>&copy; 2026. Всі права захищено.</p>
+      </div>
+    </footer>
+  </body>
+</html>
