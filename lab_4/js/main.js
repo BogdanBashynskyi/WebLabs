@@ -1,7 +1,6 @@
 /* FlowTask — landing page behaviour */
 
 document.addEventListener('DOMContentLoaded', function () {
-
   /* Header navigation */
 
   document.querySelectorAll('.nav-item').forEach(function (item) {
@@ -62,19 +61,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document.querySelectorAll('.faq__q').forEach(function (question) {
     question.addEventListener('click', function () {
-      question.parentElement.classList.toggle('is-open');
+      var isOpen = question.parentElement.classList.toggle('is-open');
+      question.setAttribute('aria-expanded', String(isOpen));
     });
   });
-
-  /* Seasonal promo bar */
-
-  window.addEventListener('load', function () {
-    setTimeout(function () {
-      var promo = document.createElement('div');
-      promo.className = 'promo';
-      promo.innerHTML = '<strong>Autumn offer</strong> 3 months of Pro for the price of one. <a href="#pricing">See plans</a>';
-      document.body.insertBefore(promo, document.body.firstChild);
-    }, 800);
-  });
-
 });

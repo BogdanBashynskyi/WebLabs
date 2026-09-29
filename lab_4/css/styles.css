@@ -1,16 +1,16 @@
 /* FlowTask — landing page styles */
 
 @font-face {
-  font-family: "Inter";
-  src: url("../fonts/inter-latin.woff2") format("woff2");
+  font-family: 'Inter';
+  src: url('../fonts/inter-latin.woff2') format('woff2');
   font-weight: 400 700;
   font-style: normal;
 }
 
 :root {
   --ink: #111827;
-  --ink-muted: #939ba7;
-  --ink-soft: #717985;
+  --ink-muted: #4b5563;
+  --ink-soft: #374151;
   --brand: #4f46e5;
   --brand-dark: #4338ca;
   --brand-tint: #eef2ff;
@@ -30,15 +30,16 @@
 
 body {
   margin: 0;
-  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
   font-size: 17px;
   line-height: 1.65;
   color: var(--ink);
   background: var(--surface);
 }
 
-:focus {
-  outline: none;
+:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
 }
 
 img {
@@ -137,6 +138,9 @@ a {
 }
 
 .nav-item {
+  padding: 0;
+  border: 0;
+  background: transparent;
   font-size: 15px;
   font-weight: 500;
   color: #374151;
@@ -214,9 +218,14 @@ a {
 /* Promo banner */
 
 .promo {
+  min-height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
   background: var(--brand-tint);
   border-bottom: 1px solid #dfe3f8;
-  padding: 30px var(--step);
+  padding: 16px var(--step);
   text-align: center;
   font-size: 15px;
 }
