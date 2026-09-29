@@ -17,6 +17,7 @@
     <meta property="og:url" content="https://web-labs-eight.vercel.app/lab_4/index.html" />
     <meta property="og:type" content="website" />
     <link rel="canonical" href="https://web-labs-eight.vercel.app/lab_4/index.html" />
+    <link rel="preload" as="image" href="img/hero.jpg" fetchpriority="high" />
     <link rel="icon" href="img/logo.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="css/styles.css" />
     <script src="js/main.js"></script>
@@ -92,6 +93,8 @@
             width="1200"
             height="820"
             fetchpriority="high"
+            loading="eager"
+            decoding="async"
           />
         </div>
       </section>
@@ -99,7 +102,7 @@
       <section class="section section--alt" id="features">
         <div class="shell">
           <div class="section__head">
-            <h4>Why FlowTask?</h4>
+            <h2>Why FlowTask?</h2>
             <p class="muted">Three things teams ask us for, built in rather than bolted on.</p>
           </div>
 
@@ -363,7 +366,13 @@
             <p class="muted">Project management for teams that ship every week.</p>
             <div class="social">
               <a href="#" aria-label="Follow FlowTask on X">
-                <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  aria-hidden="true"
+                  focusable="false"
+                >
                   <path
                     d="M10.6 7.6 15.3 2h-1.5l-4 4.9L6.4 2H2l5 7.3L2 15.5h1.5l4.2-5.2 3.5 5.2H16l-5.4-7.9Z"
                     fill="#374151"
@@ -371,7 +380,13 @@
                 </svg>
               </a>
               <a href="#" aria-label="View FlowTask GitHub profile">
-                <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  aria-hidden="true"
+                  focusable="false"
+                >
                   <path
                     d="M9 1.5a7.5 7.5 0 0 0-2.4 14.6c.4.1.5-.2.5-.4v-1.4c-2 .4-2.5-.5-2.7-1-.1-.3-.6-1-1-1.2-.3-.2-.8-.6 0-.6.7 0 1.2.7 1.4 1 .8 1.3 2 1 2.5.7.1-.6.3-1 .6-1.2-1.8-.2-3.7-.9-3.7-4 0-.9.3-1.6.8-2.2-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.2.8a7.4 7.4 0 0 1 4 0c1.5-1 2.2-.8 2.2-.8.5 1.1.2 1.9.1 2.1.5.6.8 1.3.8 2.2 0 3.1-1.9 3.8-3.7 4 .3.3.6.8.6 1.6v2.3c0 .2.1.5.5.4A7.5 7.5 0 0 0 9 1.5Z"
                     fill="#374151"
@@ -379,7 +394,13 @@
                 </svg>
               </a>
               <a href="#" aria-label="View FlowTask LinkedIn profile">
-                <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  aria-hidden="true"
+                  focusable="false"
+                >
                   <path
                     d="M3.4 6.4h2.8v9H3.4v-9Zm1.4-4.2a1.6 1.6 0 1 1 0 3.2 1.6 1.6 0 0 1 0-3.2ZM8 6.4h2.7v1.2h.1c.4-.7 1.3-1.4 2.7-1.4 2.9 0 3.4 1.8 3.4 4.2v4.9h-2.8v-4.4c0-1 0-2.4-1.5-2.4s-1.7 1.1-1.7 2.3v4.5H8v-9Z"
                     fill="#374151"
