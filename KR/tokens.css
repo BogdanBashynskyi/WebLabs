@@ -1,0 +1,58 @@
+:root {
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  --color-surface: #ffffff;
+  --color-background: #f8fafc;
+  --color-text-main: #0f172a;
+  --color-text-muted: #64748b;
+  --color-border: #e2e8f0;
+  --color-accent: #f59e0b;
+  --color-featured-background: #eff6ff;
+  --color-dark-background: #0f172a;
+  --color-dark-surface: #1e293b;
+  --color-text-on-dark: #f8fafc;
+  --color-text-muted-on-dark: #cbd5e1;
+  --color-focus: #1d4ed8;
+  --color-image-overlay-start: rgb(15 23 42 / 4%);
+  --color-image-overlay-end: rgb(15 23 42 / 86%);
+  --color-image-border: rgb(255 255 255 / 40%);
+  --color-transparent: transparent;
+
+  --font-family-base:
+    'Montserrat', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-size-base: 1rem;
+  --font-size-small: 0.875rem;
+  --font-size-tiny: 0.5rem;
+  --font-size-micro: 0.65rem;
+  --font-size-brand: 1.25rem;
+  --font-size-icon: 1.5rem;
+  --font-size-description-max: 1.125rem;
+  --font-size-h1-min: 2.5rem;
+  --font-size-h1-max: 4.5rem;
+  --font-size-h2-min: 1.75rem;
+  --font-size-h2-max: 3rem;
+  --font-size-h3-min: 1.125rem;
+  --font-size-h3-max: 1.5rem;
+  --font-size-venue-max: 2.5rem;
+  --font-size-price: 1.5rem;
+  --font-size-decoration-min: 5rem;
+  --font-size-decoration-max: 17rem;
+
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 0.75rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-section: clamp(3.5rem, 8vw, 6rem);
+  --spacing-menu-top: 6rem;
+  --spacing-menu-lines: 0.3125rem;
+
+  --border-radius-sm: 0.75rem;
+  --border-radius: 1rem;
+  --border-radius-lg: 1.5rem;
+  --border-radius-pill: 999px;
+
+  --shadow-card: 0 1.25rem 3rem rgb(15 23 42 / 8%);
+  --shadow-featured: 0 1.5rem 3.5rem rgb(37 99 235 / 16%);
+}
