@@ -825,10 +825,10 @@ p {
 
 .final-cta__decoration {
   position: absolute;
-  right: calc(var(--spacing-2xl) * -1);
+  right: 0;
   bottom: calc(var(--spacing-xl) * -1);
   color: var(--color-dark-surface);
-  font-size: clamp(var(--font-size-decoration-min), 24vw, var(--font-size-decoration-max));
+  font-size: clamp(var(--font-size-decoration-min), 18vw, var(--font-size-decoration-max));
   font-weight: 800;
   letter-spacing: -0.1em;
   line-height: 1;
@@ -928,7 +928,7 @@ p {
   }
 
   .hero-sticker {
-    left: calc(var(--spacing-lg) * -1);
+    left: 0;
     width: 6.5rem;
   }
 
