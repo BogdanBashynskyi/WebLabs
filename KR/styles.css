@@ -17,7 +17,7 @@ body {
   line-height: 1.6;
 }
 
-body.menu-open {
+body.no-scroll {
   position: fixed;
   width: 100%;
 }

@@ -4,25 +4,26 @@ const mobileNav = document.querySelector('#mobile-nav');
 if (menuButton && mobileNav) {
   let previousScrollY = 0;
 
+  const setMenuOpen = (isOpen) => {
+    menuButton.setAttribute('aria-expanded', String(isOpen));
+    menuButton.setAttribute('aria-label', isOpen ? 'Закрити меню' : 'Відкрити меню');
+    mobileNav.hidden = !isOpen;
+    document.body.classList.toggle('no-scroll', isOpen);
+  };
+
   const closeMenu = () => {
     if (menuButton.getAttribute('aria-expanded') !== 'true') {
       return;
     }
 
-    menuButton.setAttribute('aria-expanded', 'false');
-    menuButton.setAttribute('aria-label', 'Відкрити меню');
-    mobileNav.hidden = true;
-    document.body.classList.remove('menu-open');
+    setMenuOpen(false);
     window.scrollTo(0, previousScrollY);
     menuButton.focus();
   };
 
   const openMenu = () => {
     previousScrollY = window.scrollY;
-    mobileNav.hidden = false;
-    menuButton.setAttribute('aria-expanded', 'true');
-    menuButton.setAttribute('aria-label', 'Закрити меню');
-    document.body.classList.add('menu-open');
+    setMenuOpen(true);
     mobileNav.querySelector('a')?.focus();
   };
 

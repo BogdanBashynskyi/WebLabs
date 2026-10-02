@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bogdanbashynskyi.github.io/WebLabs/sitemap.xml
