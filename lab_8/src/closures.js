@@ -1,41 +1,67 @@
 /**
- * @typedef {object} Counter
- * @property {() => number} increment збільшує значення на 1 і повертає нове
- * @property {() => number} reset повертає значення до початкового і повертає його
- * @property {() => number} value поточне значення
+ * Challenge 5: createCounter, once, memoize
  */
 
 /**
- * C5.1. Створює лічильник.
- * Специфікація — ТЗ, C5.
+ * Створює лічильник із замиканням.
  *
- * @param {number} [start]
- * @returns {Counter}
+ * @param {number} [start=0]
+ * @returns {{ increment: Function, reset: Function, value: Function }}
  */
 export function createCounter(start = 0) {
-  throw new Error('Not implemented');
+  let current = start;
+
+  return {
+    increment() {
+      current += 1;
+      return current;
+    },
+    reset() {
+      current = start;
+      return current;
+    },
+    value() {
+      return current;
+    },
+  };
 }
 
 /**
- * C5.2. Обгортає `fn` так, що вона виконується щонайбільше один раз.
- * Специфікація — ТЗ, C5.
+ * Виконує передану функцію лише один раз і повертає перший збережений результат.
  *
- * @template {(...args: any[]) => any} F
- * @param {F} fn
- * @returns {F}
+ * @param {Function} fn
+ * @returns {Function}
  */
 export function once(fn) {
-  throw new Error('Not implemented');
+  let hasRun = false;
+  let cachedResult;
+
+  return function (...args) {
+    if (!hasRun) {
+      hasRun = true;
+      cachedResult = fn(...args);
+    }
+    return cachedResult;
+  };
 }
 
 /**
- * C5.3. Запам'ятовує результати `fn` для кожного значення її єдиного аргументу.
- * Специфікація — ТЗ, C5.
+ * Запам'ятовує результат виклику функції для одного примітивного аргументу.
+ * Розрізняє примітиви 1 та '1' за допомогою Map.
  *
- * @template T, R
- * @param {(arg: T) => R} fn
- * @returns {(arg: T) => R}
+ * @param {Function} fn
+ * @returns {Function}
  */
 export function memoize(fn) {
-  throw new Error('Not implemented');
+  const cache = new Map();
+
+  return function (arg) {
+    if (cache.has(arg)) {
+      return cache.get(arg);
+    }
+
+    const result = fn(arg);
+    cache.set(arg, result);
+    return result;
+  };
 }
