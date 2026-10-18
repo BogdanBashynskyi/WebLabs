@@ -11,11 +11,10 @@ const status = document.getElementById('status');
 
 // Venues currently on screen
 let venues = [];
-let searchRequest = 0;
 
 /* Mobile menu */
 
-const menuBtn = document.getElementById('menu-btn');
+const menuBtn = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.main-nav');
 
 menuBtn.addEventListener('click', () => {
@@ -29,24 +28,23 @@ menuBtn.addEventListener('click', () => {
 form.date.value = toISODate(new Date());
 
 function readFilters() {
-  return { city: form.city.value, sport: form.sport.value };
+  return {
+    city: form.city.value,
+    sport: form.sport.value,
+  };
 }
 
 async function handleSearch(event) {
   event.preventDefault();
-  const requestId = ++searchRequest;
   status.textContent = 'Шукаємо…';
   results.setAttribute('aria-busy', 'true');
 
   const found = await fetchVenues(readFilters());
-  if (requestId !== searchRequest) {
-    return;
-  }
-
   renderResults(results, found);
   venues = found;
   bindBookButtons();
   results.setAttribute('aria-busy', 'false');
+
   const count = results.children.length;
   status.textContent = count ? `Знайдено: ${count}` : 'Нічого не знайдено';
 }
@@ -58,20 +56,17 @@ form.addEventListener('submit', handleSearch);
 function bindBookButtons() {
   document.querySelectorAll('.venue-card__book').forEach((button) => {
     button.addEventListener('click', () => {
-      const venue = venues.find((item) => String(item.id) === String(button.dataset.id));
-      openBooking(venue, form.date.value || toISODate(new Date()), button);
+      const venue = venues.find((item) => item.id === button.dataset.id);
+      openBooking(venue, form.date.value);
     });
   });
 }
 
 /* Initial state: popular venues */
 
-const initialRequestId = ++searchRequest;
 const popularVenues = await fetchVenues({ popular: true });
-if (initialRequestId === searchRequest) {
-  venues = popularVenues;
-  renderResults(results, venues);
-  results.setAttribute('aria-busy', 'false');
-  status.textContent = `Популярні майданчики: ${results.children.length}`;
-  bindBookButtons();
-}
+venues = popularVenues;
+renderResults(results, venues);
+results.setAttribute('aria-busy', 'false');
+status.textContent = `Популярні майданчики: ${results.children.length}`;
+bindBookButtons();
