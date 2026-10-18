@@ -14,6 +14,7 @@ const bookingsCount = document.getElementById('bookings-count');
 
 const bookings = [];
 let current = null;
+let openerButton = null;
 
 function field(name) {
   return dialog.querySelector(`[data-field="${name}"]`);
@@ -24,8 +25,9 @@ function updateTotal() {
   field('total').textContent = formatPrice(current.venue.pricePerHour * hours);
 }
 
-export function openBooking(venue, date) {
+export function openBooking(venue, date, opener = null) {
   current = { venue, date };
+  openerButton = opener;
   form.reset();
 
   field('name').textContent = venue.name;
@@ -42,12 +44,14 @@ function renderBookingCount() {
 
 function renderBookingsList() {
   bookingsList.innerHTML = bookings
-    .map((booking) => `
+    .map(
+      (booking) => `
       <li class="bookings-list__item">
         <strong>${booking.venue.name}</strong>
         <span>${formatDate(booking.date)}, ${booking.time} · ${booking.duration}</span>
         <span class="bookings-list__total">${formatPrice(booking.total)}</span>
-      </li>`)
+      </li>`,
+    )
     .join('');
   bookingsEmpty.hidden = bookings.length > 0;
 }
@@ -73,5 +77,26 @@ hoursSelect.addEventListener('change', updateTotal);
 form.addEventListener('submit', confirmBooking);
 dialog.querySelector('[data-action="cancel"]').addEventListener('click', () => dialog.close());
 
-document.querySelector('.bookings-toggle').addEventListener('click', () => bookingsDialog.showModal());
-bookingsDialog.querySelector('[data-action="close"]').addEventListener('click', () => bookingsDialog.close());
+document
+  .querySelector('.bookings-toggle')
+  .addEventListener('click', () => bookingsDialog.showModal());
+bookingsDialog
+  .querySelector('[data-action="close"]')
+  .addEventListener('click', () => bookingsDialog.close());
+
+dialog.addEventListener('close', () => {
+  if (openerButton) {
+    openerButton.focus();
+    openerButton = null;
+  }
+});
+
+const bookingsToggleBtn = document.querySelector('.bookings-toggle');
+
+bookingsToggleBtn.addEventListener('click', () => {
+  bookingsDialog.showModal();
+});
+
+bookingsDialog.addEventListener('close', () => {
+  bookingsToggleBtn.focus();
+});
