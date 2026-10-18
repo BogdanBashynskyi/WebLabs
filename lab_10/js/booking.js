@@ -12,7 +12,6 @@ const bookingsList = document.getElementById('bookings-list');
 const bookingsEmpty = document.getElementById('bookings-empty');
 const bookingsCount = document.getElementById('bookings-count');
 
-const badge = document.querySelector('.bookings-count');
 const bookings = [];
 let current = null;
 
@@ -38,7 +37,7 @@ export function openBooking(venue, date) {
 }
 
 function renderBookingCount() {
-  badge.textContent = bookings.length;
+  bookingsCount.textContent = bookings.length;
 }
 
 function renderBookingsList() {
@@ -57,6 +56,7 @@ function renderBookingsList() {
 
 function confirmBooking(event) {
   event.preventDefault();
+  const hours = Number(hoursSelect.value);
 
   bookings.push({
     venue: current.venue,

@@ -15,7 +15,7 @@ let venues = [];
 /* Mobile menu */
 
 const menuBtn = document.querySelector('.menu-toggle');
-const nav = document.querySelector('.main-nav');
+const nav = document.getElementById('site-nav');
 
 menuBtn.addEventListener('click', () => {
   const isOpen = menuBtn.getAttribute('aria-expanded') === 'true';
