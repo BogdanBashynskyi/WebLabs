@@ -1,0 +1,36 @@
+.page-layout {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+  gap: 1.5rem;
+}
+
+.content-area {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.content-area main {
+  order: 1;
+}
+
+.content-area aside {
+  order: 2;
+}
+
+@media (min-width: 768px) {
+  .content-area {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    align-items: start;
+  }
+
+  .content-area aside {
+    order: 1;
+  }
+
+  .content-area main {
+    order: 2;
+  }
+}
